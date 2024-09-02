@@ -9,7 +9,6 @@ app = FastAPI()
 fireflies = FirefliesWrapper()
 
 
-
 @app.get("/")
 async def root():
     return {"app": "fireflies.forgefx.tools", "version": "v2024.09.02-01"}
