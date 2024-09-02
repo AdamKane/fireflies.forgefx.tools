@@ -11,7 +11,7 @@ except ValueError as e:
 
 @app.get("/")
 async def root():
-    return {"app": "fireflies.forgefx.tools", "version": "v2024.09.02-02"}
+    return {"app": "fireflies.forgefx.tools", "version": "v2024.09.02-03"}
 
 @app.get("/hello/{name}")
 async def say_hello(name: str):
