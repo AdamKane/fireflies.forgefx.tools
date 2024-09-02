@@ -8,6 +8,9 @@ load_dotenv()
 class FirefliesWrapper:
     def __init__(self):
         self.api_key = os.getenv("FIREFLIES_API_KEY")
+        if not self.api_key:
+            raise ValueError("FIREFLIES_API_KEY is not set in the environment variables")
+        
         self.base_url = "https://api.fireflies.ai/graphql"
         self.headers = {
             "Content-Type": "application/json",
@@ -29,7 +32,7 @@ class FirefliesWrapper:
             print(f"Response content: {response.text}")
             return {}
 
-    def get_users(self) -> dict:
+    def get_users(self) -> list:
         query = """
             query {
                 users {
