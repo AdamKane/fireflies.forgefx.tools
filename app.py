@@ -1,7 +1,4 @@
-
 from fastapi import FastAPI
-
-
 
 from fireflies_wrapper import FirefliesWrapper
 
@@ -16,3 +13,8 @@ async def root():
 @app.get("/hello/{name}")
 async def say_hello(name: str):
     return {"message": f"Hello {name}"}
+
+@app.get("/user_count")
+async def get_user_count():
+    count = fireflies.get_user_count()
+    return {"user_count": count}
