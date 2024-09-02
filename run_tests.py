@@ -9,8 +9,8 @@ def run_tests_and_save_results():
     stdout_backup = sys.stdout
     sys.stdout = StringIO()
 
-    # Run pytest with compact output
-    pytest.main(['-v', '-s', '--tb=short'])
+    # Run pytest with the new configuration
+    pytest.main(['-v', '-s'])
 
     # Get the test output
     output = sys.stdout.getvalue()
